@@ -6,15 +6,16 @@ import yaml
 ADMINS = (('Sidon', 'sidoncd@gmail.com'),)
 MANAGERS = ADMINS
 
-# PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 DOC = os.path.join(BASE_DIR, 'doc')
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
 
-print('BASE_DIR', BASE_DIR)
-print('PROJECT_DIR', PROJECT_DIR)
+# print('BASE_DIR: ', BASE_DIR)
+# print('PROJECT_DIR: ', PROJECT_DIR)
+# print('REPO_DIR: ', REPO_DIR)
 
 DEBUG = False
 THUMBNAIL_DEBUG = DEBUG
@@ -66,6 +67,9 @@ SHARED_APPS = (
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'django_markup',
+    'bootstrap4',
+
     # Project Apps
     'base_django.apps.customer',
     'base_django.apps.bpauth',
@@ -149,15 +153,16 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = False
-STATIC_URL = '/static/'
+STATIC_URL = '/staticbuild/'
 
 if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
     os.makedirs(os.path.join(BASE_DIR, 'logs'))
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
 
-if not os.path.exists(os.path.join(BASE_DIR, 'static')):
-    os.makedirs(os.path.join(BASE_DIR, 'static'))
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+if not os.path.exists(os.path.join(BASE_DIR, 'staticbuild')):
+    os.makedirs(os.path.join(BASE_DIR, 'staticbuild'))
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'base_django/static'),)
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
 MEDIA_URL = '/media/'
 

@@ -11,7 +11,7 @@ services:
       - redis:redis
     volumes:
       - web-django:/usr/src/app
-      - web-static:/usr/src/app/static
+      - web-staticbuild:/usr/src/app/staticbuild
     env_file: .env
     environment:
       DEBUG: 'true'
@@ -23,7 +23,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - web-static:/www/static
+      - web-staticbuild:/www/staticbuild
     links:
       - web:web
 
