@@ -13,9 +13,9 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 DOC = os.path.join(BASE_DIR, 'doc')
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
 
-# print('BASE_DIR: ', BASE_DIR)
-# print('PROJECT_DIR: ', PROJECT_DIR)
-# print('REPO_DIR: ', REPO_DIR)
+print('BASE_DIR: ', BASE_DIR)
+print('PROJECT_DIR: ', PROJECT_DIR)
+print('REPO_DIR: ', REPO_DIR)
 
 DEBUG = False
 THUMBNAIL_DEBUG = DEBUG
@@ -23,31 +23,31 @@ INTERNAL_IPS = ['127.0.0.1']
 ALLOWED_HOSTS = ['*']
 
 
-FCONF = os.environ.get('CONFCRM')
-try:
-    with open(FCONF, 'r') as f:
-        settings = yaml.safe_load(f)
-except IOError as e:
-    print("I/O error({0}): {1}".format(e.errno, e.strerror))
-    raise
-except:
-    print('FCONF==>', FCONF)
-    print("Erro inesperado", sys.exc_info())
-    print("Erro inesperado", sys.exc_info()[0])
-    raise
+# FCONF = os.environ.get('CONFCRM')
+# try:
+#     with open(FCONF, 'r') as f:
+#         settings = yaml.safe_load(f)
+# except IOError as e:
+#     print("I/O error({0}): {1}".format(e.errno, e.strerror))
+#     raise
+# except:
+#     print('FCONF==>', FCONF)
+#     print("Erro inesperado", sys.exc_info())
+#     print("Erro inesperado", sys.exc_info()[0])
+#     raise
 
-DEBUG = settings['debug']
-SECRET_KEY = settings['key']
-DATABASES = settings['db']
-ALLOWED_HOSTS = ['*']
+# DEBUG = settings['debug']
+# SECRET_KEY = settings['key']
+# DATABASES = settings['db']
 
+SECRET_KEY = 'take-a-sad-song-and-make-it-better'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 SHARED_APPS = (

@@ -17,8 +17,6 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-
-
 class CustomerManager(models.Manager):
     def create_customer(self, email, full_name, phones, password):
         user = self.model(
@@ -34,7 +32,9 @@ class CustomerManager(models.Manager):
 
 class Customer(User):
     full_name = models.CharField("Nome completo", max_length=70)
-    phones = ArrayField(models.CharField(max_length=15), blank=True)
+    # Array field only for postgres
+    # phones = ArrayField(models.CharField(max_length=15), blank=True)
+    phones =  models.CharField("Telefones", max_length=70)
     objects = CustomerManager()
 
     def __str__(self):
