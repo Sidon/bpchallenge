@@ -24,6 +24,17 @@ TL;DR
 | Testes (Integração): coming soon
 
 
+Execução local via Docker
+==============================
+
+.. code-block::
+
+   docker build . -t bprev
+   docker run -d -p 8030:8030 bprev
+
+
+
+
 DESCRIÇÃO DA SOLUÇÃO PROPOSTA
 *****************************
 A applicação está sendo desenvolvida em python/django, tanto no backend (API REST) como no front-end,
