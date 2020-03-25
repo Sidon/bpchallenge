@@ -253,8 +253,8 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Sidon <sidoncd@gmail.com>'
 SERVER_EMAIL = 'sidoncd@gmail.com'
 
-SITE_HEADER = 'Biomed CRM'
-SITE_TITLE = 'Biomed CRM'
+SITE_HEADER = 'Brasilprev Bakend Test'
+SITE_TITLE = 'Brasilprev Bakend Test'
 INDEX_TITLE = 'DashBoard'
 
 
