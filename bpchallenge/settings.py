@@ -168,13 +168,6 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-MEDIA_URL = '/media/'
-
-if not os.path.exists(os.path.join(BASE_DIR, 'media')):
-    os.makedirs(os.path.join(BASE_DIR, 'media'))
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ('%d/%m/%Y', '%d/%m/%y',)
 DATETIME_FORMAT = 'm/d/Y H:M:S'
