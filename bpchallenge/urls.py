@@ -46,21 +46,14 @@ router.register('Address', AddressViewSet, basename='address')
 urlpatterns = [
     path('', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='home'),
     path('readme', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='readme'),
-    path('grappelli/', include('grappelli.urls')),   # grappelli URLS
+    # path('grappelli/', include('grappelli.urls')),   # grappelli URLS
     path('admin/', admin.site.urls),
     path('api/v1/', include((router.urls, 'api-root'),  namespace='api-root')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    # path('graphql/', include('apps.graphql.urls', namespace='graphql')),
-    # path('graphiql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    #path("graphql/", csrf_exempt(GraphQLView.as_view(schema=schema)), name="api"),
-
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
-    path('media/<path:path>', url_static.serve, {'document_root': settings.MEDIA_ROOT}),
-    path('staticbuild/<path:path>', url_static.serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
 admin.site.site_header = "Brasilprev Python Test Admin"
