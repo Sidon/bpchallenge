@@ -34,7 +34,7 @@ schema_view = get_schema_view(
 app_name='bpchallenge'
 
 router = DefaultRouter()
-router.register('customer', CustomerCreateViewSet, basename='customer'),
+router.register('add-customer', CustomerCreateViewSet, basename='customer'),
 router.register('customer', CustomerViewSet, basename='customer'),
 router.register('item', ItemViewSet, basename='itens')
 router.register('order', OrderViewSet, basename='orders'),
