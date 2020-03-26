@@ -1,1 +1,1 @@
-web: gunicorn bp.challenge.wsgi --log-file -
+web: gunicorn bpchallenge.wsgi --log-file -
