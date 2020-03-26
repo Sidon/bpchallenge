@@ -6,11 +6,14 @@ import yaml
 ADMINS = (('Sidon', 'sidoncd@gmail.com'),)
 MANAGERS = ADMINS
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.split(SETTINGS_DIR)[0]
+BASE_DIR = os.path.split(PROJECT_ROOT)[0]
 
-DOC = os.path.join(BASE_DIR, 'doc')
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
+LOG_DIR = os.path.join(BASE_DIR, 'log')
+DOC_DIR = os.path.join(BASE_DIR, 'doc')
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 # print('BASE_DIR: ', BASE_DIR)
 # print('PROJECT_DIR: ', PROJECT_DIR)
@@ -151,19 +154,19 @@ USE_L10N = True
 USE_TZ = False
 
 
-if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
-    os.makedirs(os.path.join(BASE_DIR, 'logs'))
 
-if not os.path.exists(os.path.join(PROJECT_DIR, 'staticbuild')):
-    os.makedirs(os.path.join(PROJECT_DIR, 'staticbuild'))
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(PROJECT_DIR, 'static'),)
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticbuild')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 
 MEDIA_URL = '/media/'
@@ -178,6 +181,11 @@ DATETIME_FORMAT = 'm/d/Y H:M:S'
 DATETIME_INPUT_FORMATS = ('%d/%m/%Y %H:%M:%S', '%d/%m/%y %H:%M:%S',)
 DECIMAL_SEPARATOR = ','
 USE_THOUSAND_SEPARATOR = True
+
+
+if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
+    os.makedirs(os.path.join(BASE_DIR, 'logs'))
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
 
 # Configurações de logs
 LOGGING = {
