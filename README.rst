@@ -18,8 +18,8 @@ fará a arquitetura do sistema, bem como frameworks que utilizará.
 TL;DR
 *******
 | A aplicação está hospedada no Heroku http://www.heroku.com.
-| Para testá-la clique: coming soon
-| Repositorio no github: coming soon
+| Para testá-la clique: https://sdn-bptest.herokuapp.com/
+| Repositorio no github: https://github.com/Sidon/bpchallenge
 | Documentação REST API: coming soon
 | Testes (Integração): coming soon
 
