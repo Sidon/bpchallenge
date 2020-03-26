@@ -153,17 +153,20 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = False
-STATIC_URL = '/staticbuild/'
+
 
 if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
     os.makedirs(os.path.join(BASE_DIR, 'logs'))
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
-
 if not os.path.exists(os.path.join(BASE_DIR, 'staticbuild')):
     os.makedirs(os.path.join(BASE_DIR, 'staticbuild'))
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'base_django/static'),)
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'base_django/static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
+
+
+
 MEDIA_URL = '/media/'
 
 if not os.path.exists(os.path.join(BASE_DIR, 'media')):
