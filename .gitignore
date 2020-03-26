@@ -66,7 +66,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-web/base_django/docs/_build/
+bpchallenge/docs/_build/
 
 # PyBuilder
 target/
@@ -106,16 +106,16 @@ venv.bak/
 .mypy_cache/
 
 /.idea/
-/web/base_django/media/
+/bpchallenge/media/
 /staticbuild/
 .error.log
-/web/base_django/logs/
+/bpchallenge/logs/
 /.vscode/
 /env/
 
 /gptheme/
 settings_local.py
-web/base_django/static/
+bpchallenge/static/
 
 # Recursos locais
 elitrabalhista/local_settings.py

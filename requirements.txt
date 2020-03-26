@@ -1,1 +1,1 @@
--r web/requirements/base_requirements.txt
+-r requirements/base_requirements.txt

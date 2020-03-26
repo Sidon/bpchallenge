@@ -15,7 +15,7 @@ RUN mkdir -p /var/log/gunicorn
 COPY README.rst /opt
 WORKDIR  /opt/djangoapp
 
-COPY web/ .
+COPY . .
 RUN pip install -r base_django/requirements.txt
 # RUN ./manage.py collectstatic
 # RUN apt install vim

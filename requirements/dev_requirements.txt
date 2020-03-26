@@ -1,0 +1,4 @@
+django-debug-toolbar
+ipython
+django_extensions
+-r base_requirements.txt

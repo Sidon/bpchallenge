@@ -1,1 +1,1 @@
-web: gunicorn web.base_django.wsgi --log-file -
+web: gunicorn bp.challenge.wsgi --log-file -

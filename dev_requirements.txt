@@ -1,4 +1,0 @@
-django-debug-toolbar
-ipython
-django_extensions
--r requirements.txt
