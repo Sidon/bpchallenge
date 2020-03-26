@@ -15,8 +15,8 @@ LOG_DIR = os.path.join(BASE_DIR, 'log')
 DOC_DIR = os.path.join(BASE_DIR, 'doc')
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 
-# print('BASE_DIR: ', BASE_DIR)
-# print('PROJECT_DIR: ', PROJECT_DIR)
+print('BASE_DIR: ', BASE_DIR)
+print('PROJECT_DIR: ', PROJECT_ROOT)
 
 DEBUG = True
 THUMBNAIL_DEBUG = DEBUG
@@ -74,10 +74,10 @@ SHARED_APPS = (
     'bootstrap4',
 
     # Project Apps
-    'bpchallenge.apps.customer',
-    'bpchallenge.apps.bpauth',
-    'bpchallenge.apps.order',
-    'bpchallenge.apps.item',
+    'apps.customer',
+    'apps.bpauth',
+    'apps.order',
+    'apps.item',
 )
 
 INSTALLED_APPS = list(SHARED_APPS)

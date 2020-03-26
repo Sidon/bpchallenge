@@ -6,5 +6,5 @@ __email__ = "sidoncd@gmail.com"
 
 
 class BPauthConfig(AppConfig):
-    name = 'bpchallenge.apps.bpauth'
+    name = 'apps.bpauth'
     verbose_name = "Contas de Usuários"

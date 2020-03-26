@@ -5,13 +5,11 @@ from rest_framework import permissions
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
-from django.views import static as url_static
-from .apps.customer.views import CustomerViewSet, AddressViewSet
-from .apps.item.views import ItemViewSet
-from .apps.order.views import OrderViewSet, OrderItemViewSet
+from apps.customer.views import CustomerViewSet, AddressViewSet
+from apps.item.views import ItemViewSet
+from apps.order.views import OrderViewSet, OrderItemViewSet
 from .views import ReadMeView
 
 __author__ = "Sidon Duarte"
