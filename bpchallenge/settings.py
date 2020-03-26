@@ -11,7 +11,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_PATH = os.path.join(PROJECT_ROOT, 'templates')
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# Collect static
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
+
+# Url in browser
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
