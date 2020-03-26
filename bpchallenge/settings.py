@@ -80,6 +80,7 @@ INSTALLED_APPS = list(SHARED_APPS)
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
