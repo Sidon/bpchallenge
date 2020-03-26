@@ -11,27 +11,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_PATH = os.path.join(PROJECT_ROOT, 'templates')
 
-# Collect static
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
-
-# Url in browser
-STATIC_URL = '/staticbuild/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
-
-
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 DOC_DIR = os.path.join(BASE_DIR, 'doc')
 DATA_DIR = os.path.join(BASE_DIR, 'data')
-
-print('BASE_DIR: ', BASE_DIR)
-print('STATIC_ROOT: ', STATIC_ROOT)
-print('STATIC_URL: ', STATIC_URL)
-print('STATIC_DIRS: ', STATICFILES_DIRS)
 
 DEBUG = True
 THUMBNAIL_DEBUG = DEBUG
@@ -316,6 +298,23 @@ GRAPHQL_JWT = {
 #     from .settings_local import *
 # except ImportError:
 #     pass
+
+
+# Collect static
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
+
+# Url in browser
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+print('BASE_DIR: ', BASE_DIR)
+print('STATIC_ROOT: ', STATIC_ROOT)
+print('STATIC_URL: ', STATIC_URL)
+print('STATIC_DIRS: ', STATICFILES_DIRS)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
