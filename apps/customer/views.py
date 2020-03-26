@@ -5,14 +5,17 @@ from .serializers import CustomerSerializer, AddressSerializer
 from .models import Customer, Address
 
 
+class CustomerCreateViewSet(GenericViewSet, mixins.CreateModelMixin,):
+    permission_classes = (AllowAny,)
+    serializer_class = CustomerSerializer
+    queryset = Customer.objects.all()
+
+
 class CustomerViewSet(GenericViewSet,
-                      mixins.CreateModelMixin,
                       mixins.ListModelMixin,
                       mixins.UpdateModelMixin,
                       mixins.DestroyModelMixin):
-    # Allow any user (authenticated or not) to hit this endpoint.
-    permission_classes = (AllowAny,)
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
 
@@ -22,10 +25,6 @@ class AddressViewSet(GenericViewSet,
                       mixins.ListModelMixin,
                       mixins.UpdateModelMixin,
                       mixins.DestroyModelMixin):
-    # Allow any user (authenticated or not) to hit this endpoint.
-    permission_classes = (AllowAny,)
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     serializer_class = AddressSerializer
     queryset = Address.objects.all()
-
-

@@ -7,7 +7,7 @@ from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshVie
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, re_path
-from apps.customer.views import CustomerViewSet, AddressViewSet
+from apps.customer.views import CustomerViewSet, AddressViewSet, CustomerCreateViewSet
 from apps.item.views import ItemViewSet
 from apps.order.views import OrderViewSet, OrderItemViewSet
 from .views import ReadMeView
@@ -34,6 +34,7 @@ schema_view = get_schema_view(
 app_name='bpchallenge'
 
 router = DefaultRouter()
+router.register('customer', CustomerCreateViewSet, basename='customer'),
 router.register('customer', CustomerViewSet, basename='customer'),
 router.register('item', ItemViewSet, basename='itens')
 router.register('order', OrderViewSet, basename='orders'),
@@ -44,7 +45,6 @@ router.register('Address', AddressViewSet, basename='address')
 urlpatterns = [
     path('', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='home'),
     path('readme', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='readme'),
-    # path('grappelli/', include('grappelli.urls')),   # grappelli URLS
     path('admin/', admin.site.urls),
     path('api/v1/', include((router.urls, 'api-root'),  namespace='api-root')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
