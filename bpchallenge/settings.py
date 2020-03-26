@@ -15,7 +15,7 @@ TEMPLATE_PATH = os.path.join(PROJECT_ROOT, 'templates')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
 
 # Url in browser
-STATIC_URL = '/static/'
+STATIC_URL = '/staticbuild/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
