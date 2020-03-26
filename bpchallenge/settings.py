@@ -7,19 +7,18 @@ ADMINS = (('Sidon', 'sidoncd@gmail.com'),)
 MANAGERS = ADMINS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_DIR  = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_PATH = os.path.join(PROJECT_ROOT, 'templates')
 
-
-# Static file
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
+
 
 
 LOG_DIR = os.path.join(BASE_DIR, 'log')
@@ -129,12 +128,10 @@ FILE_UPLOAD_HANDLERS = (
 )
 
 ROOT_URLCONF = 'bpchallenge.urls'
-
-TEMPLATE_PATH = os.path.join(PROJECT_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
+        'DIRS': [os.path.join(PROJECT_ROOT, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -169,11 +166,6 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = False
-
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATE_FORMAT = 'd/m/Y'
 DATE_INPUT_FORMATS = ('%d/%m/%Y', '%d/%m/%y',)
@@ -321,3 +313,8 @@ GRAPHQL_JWT = {
 #     from .settings_local import *
 # except ImportError:
 #     pass
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
