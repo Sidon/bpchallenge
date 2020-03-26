@@ -63,15 +63,8 @@ urlpatterns = [
     path('staticbuild/<path:path>', url_static.serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
-admin.site.site_header = "Biomed B2B Admin"
-admin.site.site_title = "Biomed B2B Admin Portal"
-admin.site.index_title = "Bem vindo ao admin do portal Biomed"
+admin.site.site_header = "Brasilprev Python Test Admin"
+admin.site.site_title = "Brasilprev Python Test Admin Portal"
+admin.site.index_title = "Wellcome to BRASILPREV Test"
 
 
-if settings.DEBUG:
-    # import debug_toolbar
-    # urlpatterns = [path('__debug__/', include(debug_toolbar.urls)), ] + urlpatterns
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'

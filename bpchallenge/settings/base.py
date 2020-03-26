@@ -23,6 +23,8 @@ THUMBNAIL_DEBUG = DEBUG
 INTERNAL_IPS = ['127.0.0.1']
 ALLOWED_HOSTS = ['*']
 
+print('PROJECT_ROOT: ', PROJECT_ROOT)
+print('BASE_DIR: ', BASE_DIR)
 
 # FCONF = os.environ.get('CONFCRM')
 # try:
