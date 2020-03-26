@@ -8,23 +8,34 @@ MANAGERS = ADMINS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 SETTINGS_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.split(SETTINGS_DIR)[0]
-BASE_DIR = os.path.split(PROJECT_ROOT)[0]
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR  = os.path.dirname(os.path.abspath(__file__))
+
+
+# Static file
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, 'static'),
+)
+
 
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 DOC_DIR = os.path.join(BASE_DIR, 'doc')
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 
 print('BASE_DIR: ', BASE_DIR)
-print('PROJECT_DIR: ', PROJECT_ROOT)
+print('STATIC_ROOT: ', STATIC_ROOT)
+print('STATIC_URL: ', STATIC_URL)
+print('STATIC_DIRS: ', STATICFILES_DIRS)
 
 DEBUG = True
 THUMBNAIL_DEBUG = DEBUG
 INTERNAL_IPS = ['127.0.0.1']
 ALLOWED_HOSTS = ['*']
 
-print('PROJECT_ROOT: ', PROJECT_ROOT)
-print('BASE_DIR: ', BASE_DIR)
 
 # FCONF = os.environ.get('CONFCRM')
 # try:
@@ -119,10 +130,11 @@ FILE_UPLOAD_HANDLERS = (
 
 ROOT_URLCONF = 'bpchallenge.urls'
 
+TEMPLATE_PATH = os.path.join(PROJECT_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_ROOT, 'templates')],
+        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,6 +146,9 @@ TEMPLATES = [
         },
     },
 ]
+
+print('templates_PATH=>', TEMPLATE_PATH)
+print('templates=>', TEMPLATES)
 
 WSGI_APPLICATION = 'bpchallenge.wsgi.application'
 AUTH_USER_MODEL = 'bpauth.User'
@@ -154,16 +169,6 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = False
-
-
-
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 
 
 # Simplified static file serving.
@@ -248,13 +253,6 @@ LOGGING = {
     }
 }
 
-
-# Sendgrid config
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'sidoncd'
-EMAIL_HOST_PASSWORD = 'equilibrium.77'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = 'Sidon <sidoncd@gmail.com>'
 SERVER_EMAIL = 'sidoncd@gmail.com'

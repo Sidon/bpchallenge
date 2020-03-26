@@ -16,7 +16,7 @@ COPY README.rst /opt
 WORKDIR  /opt/djangoapp
 
 COPY . .
-RUN pip install -r base_django/requirements.txt
+RUN pip install -r requirements.txt
 # RUN ./manage.py collectstatic
 # RUN apt install vim
 
