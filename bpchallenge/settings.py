@@ -154,12 +154,12 @@ USE_TZ = False
 if not os.path.exists(os.path.join(BASE_DIR, 'logs')):
     os.makedirs(os.path.join(BASE_DIR, 'logs'))
 
-if not os.path.exists(os.path.join(BASE_DIR, 'staticbuild')):
-    os.makedirs(os.path.join(BASE_DIR, 'staticbuild'))
+if not os.path.exists(os.path.join(PROJECT_DIR, 'staticbuild')):
+    os.makedirs(os.path.join(PROJECT_DIR, 'staticbuild'))
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(PROJECT_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticbuild')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticbuild')
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
