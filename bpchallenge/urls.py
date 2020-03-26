@@ -38,8 +38,8 @@ router.register('add-customer', CustomerCreateViewSet, basename='customer'),
 router.register('customer', CustomerViewSet, basename='customer'),
 router.register('item', ItemViewSet, basename='itens')
 router.register('order', OrderViewSet, basename='orders'),
-router.register('OrderItem', OrderItemViewSet, basename='itens')
-router.register('Address', AddressViewSet, basename='address')
+router.register('orderitem', OrderItemViewSet, basename='itens')
+router.register('address', AddressViewSet, basename='address')
 
 
 urlpatterns = [
