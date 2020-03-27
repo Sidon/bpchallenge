@@ -18,7 +18,6 @@ django-import-export==1.2.0
 pyufbr
 django_countries
 pillow
-django-grappelli==2.14.1
 drf-yasg
 
 

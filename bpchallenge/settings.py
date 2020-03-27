@@ -130,9 +130,6 @@ TEMPLATES = [
     },
 ]
 
-print('templates_PATH=>', TEMPLATE_PATH)
-print('templates=>', TEMPLATES)
-
 WSGI_APPLICATION = 'bpchallenge.wsgi.application'
 AUTH_USER_MODEL = 'bpauth.User'
 LOGIN_URL = '/login'
@@ -311,11 +308,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
-
-print('BASE_DIR: ', BASE_DIR)
-print('STATIC_ROOT: ', STATIC_ROOT)
-print('STATIC_URL: ', STATIC_URL)
-print('STATIC_DIRS: ', STATICFILES_DIRS)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

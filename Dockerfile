@@ -17,12 +17,9 @@ WORKDIR  /opt/djangoapp
 
 COPY . .
 RUN pip install -r requirements.txt
-# RUN ./manage.py collectstatic
-# RUN apt install vim
-
 RUN chown -R www-data:www-data /opt/djangoapp
 
-# expose the port 8000
+# expose the port 8030
 EXPOSE 8030
 STOPSIGNAL SIGTERM
 CMD ["./start-server.sh"]

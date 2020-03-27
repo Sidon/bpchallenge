@@ -34,11 +34,31 @@
 
                     <li>
                         <a class="nav-link" href="https://documenter.getpostman.com/view/3684623/SzYUagfa">
-                            <i class="nc-icon nc-atom"></i>
+                            <i class="nc-icon nc-settings-gear-64"></i>
                             <p>Postman Doc API</p>
                         </a>
                     </li>
 
+                    <li class="nav-item {% if request.resolver_match.view_name == "schema-swagger-ui" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'schema-swagger-ui' %}">
+                            <i class="nc-icon nc-button-play"></i>
+                            <p>API Playgroud</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {% if request.resolver_match.view_name == "schema-redoc" %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'schema-redoc' %}">
+                            <i class="nc-icon nc-grid-45"></i>
+                            <p>Redoc</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="{% url 'admin:index' %}">
+                            <i class="nc-icon nc-umbrella-13"></i>
+                            <p>Admin</p>
+                        </a>
+                    </li>
 
 
                     <li class="nav-item {% if request.resolver_match.view_name == "readme" %}active{% endif %}">
@@ -48,26 +68,6 @@
                         </a>
                     </li>
 
-                    <li class="nav-item {% if request.resolver_match.view_name == "schema-redoc" %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'schema-redoc' %}">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>Redoc</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item {% if request.resolver_match.view_name == "schema-swagger-ui" %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'schema-swagger-ui' %}">
-                            <i class="nc-icon nc-cloud-download-93"></i>
-                            <p>API Playgroud</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="{% url 'admin:index' %}">
-                            <i class="nc-icon nc-settings-gear-64"></i>
-                            <p>Admin</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
