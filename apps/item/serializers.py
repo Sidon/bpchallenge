@@ -8,6 +8,6 @@ class ItemSerializer(serializers.ModelSerializer):
         model = Item
         fields = ('id', 'sku', 'name', 'description', 'bar_code', 'price')
 
-    def create(self, validated_data):
-        item = Item.objects.create_customer(**validated_data)
-        return item
+    # def create(self, validated_data):
+    #     item = Item.objects.create(**validated_data)
+    #     return item
