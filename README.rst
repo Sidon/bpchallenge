@@ -12,19 +12,6 @@ TL;DR
 | Github repo: http://tiny.cc/sdnbptest-github
 | Application hosted in  http://www.heroku.com.
 
-**********
-Descrição
-**********
-
-Você foi convidado a realizar um desafio para a vaga de desenvolvedor(a)
-back-end Python. Queremos avaliar sua qualidade de código, capacidade de
-análise, resolução de problemas e principalmente sua criatividade.
-
-Construa uma API REST para simular uma loja virtual. Esta loja deve ter um
-cadastro de seus clientes, produtos e pedidos. Fique à vontade para escolher como
-fará a arquitetura do sistema, bem como frameworks que utilizará.
-
-
 ***************
 Execução local
 ***************
@@ -55,6 +42,19 @@ Sem a utilização do docker
 * Ative o ambiente criado e instale os requirements
 * Execute o servidor com o comando ``python manager.py runserver``
 * Aponte o browser para ``localhost:8000``
+
+*********************
+Descrição do desafio
+*********************
+
+Você foi convidado a realizar um desafio para a vaga de desenvolvedor(a)
+back-end Python. Queremos avaliar sua qualidade de código, capacidade de
+análise, resolução de problemas e principalmente sua criatividade.
+
+Construa uma API REST para simular uma loja virtual. Esta loja deve ter um
+cadastro de seus clientes, produtos e pedidos. Fique à vontade para escolher como
+fará a arquitetura do sistema, bem como frameworks que utilizará.
+
 
 
 ******************************
