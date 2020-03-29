@@ -7,10 +7,12 @@ from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshVie
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.contrib.auth.views import LoginView
 from apps.customer.views import CustomerViewSet, AddressViewSet, CustomerCreateViewSet
 from apps.item.views import ItemViewSet
 from apps.order.views import OrderViewSet, OrderItemViewSet
 from .views import ReadMeView
+from apps.customer.views import login
 
 __author__ = "Sidon Duarte"
 __date__ = "Created by 10/09/18"
@@ -43,15 +45,16 @@ router.register('address', AddressViewSet, basename='address')
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='home'),
     path('readme', ReadMeView.as_view(), {'rst_file': os.path.join(settings.BASE_DIR, 'README.rst')}, name='readme'),
-    path('admin/', admin.site.urls),
     path('api/v1/', include((router.urls, 'api-root'),  namespace='api-root')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('login/', LoginView.as_view(template_name='customer/login.html'), name='login'),
 ]
 
 admin.site.site_header = "Brasilprev Python Test Admin"

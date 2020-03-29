@@ -16,8 +16,8 @@ TL;DR
 Execução local
 ***************
 
-Clone o repositório
-**********************
+Obtendo o código
+*****************
 
 * Clone o repositorio: http://tiny.cc/sdnbptest-github
 * Crie um ambiente virtual com seu gerenciador favorito (conda, pyenv, virtualenv, etc);
@@ -108,5 +108,5 @@ Em função do tempo a opção foi fazer o minimo de teste possível somente par
 O pacote utilizado para o testes foi o pytest: https://docs.pytest.org/en/latest/
 
 :Date: **27/03/2020**
-:Author: **Sidon Duarte**
+:Author:  **Sidon Duarte**
 

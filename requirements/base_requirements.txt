@@ -19,6 +19,7 @@ pyufbr
 django_countries
 pillow
 drf-yasg
+django-crispy-forms
 
 
 

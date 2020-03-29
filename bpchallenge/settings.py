@@ -67,6 +67,7 @@ SHARED_APPS = (
     'drf_yasg',
     'django_markup',
     'bootstrap4',
+    'crispy_forms',
 
     # Project Apps
     'apps.customer',
@@ -313,3 +314,18 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Basic': {
+            'type': 'basic'
+      },
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Auth-Token',
+            'in': 'header'
+      }
+   }
+}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
