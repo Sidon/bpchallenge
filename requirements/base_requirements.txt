@@ -8,7 +8,7 @@ django-markup==1.4.1
 docutils==0.16
 whitenoise==5.0.1
 gunicorn==20.0.4
-PyYAML==5.3
+PyYAML==5.4
 requests==2.23.0
 django-graphql-jwt==0.3.0
 graphene-django==2.8.2
